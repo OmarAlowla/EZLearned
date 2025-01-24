@@ -132,13 +132,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-## **Contact**
-
-For any questions or suggestions, feel free to reach out:
-
-- **Email**: your.email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
-
----
 
 **EZLearned** is a powerful tool for students, learners, and anyone who wants to learn quickly and efficiently. By combining AI-powered text summarization with interactive questions, the application offers a modern solution for understanding and reinforcing knowledge.
