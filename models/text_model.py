@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup  # For parsing HTML
+from bs4 import BeautifulSoup  
 
 class TextModel:
     def __init__(self, api_url):
@@ -23,7 +23,7 @@ class TextModel:
     def summarize_text(self, text):
         """Send text to the LLaMA 3 API for summarization."""
         prompt = (
-            "Summarize the following text in a concise way. "
+            "Summarize the following text in a concise way in the same language as the text. "
             "Ensure the output is in HTML format with the following structure:\n"
             "<h3>Summary:</h3>\n"
             "<h4><b>Key Points:</b></h4>\n"
@@ -42,7 +42,7 @@ class TextModel:
     def generate_questions(self, text):
         """Send text to the LLaMA 3 API to generate questions."""
         prompt = (
-            "Generate 5 multiple-choice questions based on the following text. "
+            "Generate 5 multiple-choice questions based on the following text. in the same language as the text."
             "Ensure the questions are directly related to the key points in the text. "
             "Ensure the output is in HTML format with the following structure:\n"
             "<h3>Questions:</h3>\n"

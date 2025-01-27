@@ -1,11 +1,11 @@
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QPushButton, QScrollArea, QWidget
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QPushButton, QScrollArea, QWidget, QSizePolicy
 from bs4 import BeautifulSoup  # For parsing HTML
 
 class QuestionsWindow(QDialog):
     def __init__(self, questions_html):
         super().__init__()
         self.setWindowTitle("Questions")
-        self.setGeometry(150, 150, 500, 400)
+        self.setGeometry(150, 150, 1000, 400)
 
         # Create a scroll area
         self.scroll_area = QScrollArea(self)
@@ -32,6 +32,7 @@ class QuestionsWindow(QDialog):
             # Create buttons for each option
             for option in options:
                 button = QPushButton(option, self.container)
+                button.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed) 
                 button.clicked.connect(
                     lambda checked, b=button, ca=correct_answer, opts=options: self.on_option_clicked(b, ca, opts)
                 )
@@ -75,6 +76,7 @@ class QuestionsWindow(QDialog):
                 })
 
         return questions
+
     def on_option_clicked(self, button, correct_answer, options):
         """Handle button clicks for options."""
         print(f"Selected option: {button.text()}")
